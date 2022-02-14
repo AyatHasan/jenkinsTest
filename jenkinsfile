@@ -15,15 +15,15 @@ node {
       git 'https://github.com/LambdaTest/nightwatch-selenium-sample.git'
  
       //Download Tunnel Binary
-      sh "wget https://s3.amazonaws.com/lambda-tunnel/LT_Linux.zip"
+      bat "wget https://s3.amazonaws.com/lambda-tunnel/LT_Linux.zip"
  
       //Required if unzip is not installed
-      sh 'sudo apt-get install --no-act unzip'
-      sh 'unzip -o LT_Linux.zip'
+      bat 'sudo apt-get install --no-act unzip'
+      bat 'unzip -o LT_Linux.zip'
  
       //Starting Tunnel Process 
-      sh "./LT -user ${env.LT_USERNAME} -key ${env.LT_ACCESS_KEY} &"
-      sh  "rm -rf LT_Linux.zip"
+      bat "./LT -user ${env.LT_USERNAME} -key ${env.LT_ACCESS_KEY} &"
+      bat  "rm -rf LT_Linux.zip"
     }
     catch (err){
       echo err
@@ -32,12 +32,12 @@ node {
    }
    stage('build') {
       // Installing Dependencies
-      sh 'npm install'
+      bat 'npm install'
     }
    
    stage('test') {
           try{
-          sh './node_modules/.bin/nightwatch -e chrome,edge tests'
+          bat './node_modules/.bin/nightwatch -e chrome,edge tests'
           }
           catch (err){
           echo err
