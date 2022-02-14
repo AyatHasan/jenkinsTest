@@ -1,14 +1,15 @@
+// Declarative //
 pipeline {
     agent any
+    parameters {
+        string(name: 'PERSON', defaultValue: 'Mr Jenkins', description: 'Who should I say hello to?')
+    }
     stages {
-        stage('Build') {
+        stage('Example') {
             steps {
-                echo 'This is build step'
-            }
-            }
-
-            
+                echo "Hello ${params.PERSON}"
             }
         }
-
-
+    }
+}
+// Script //
