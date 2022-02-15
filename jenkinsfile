@@ -7,9 +7,13 @@ stage("Parallel") {
     parallel (
       "Taskone" : {
         //do some stuff
+        echo 'task#1'
       },
       "Tasktwo" : {
         // Do some other stuff in parallel
+        
+                echo  1+3 
+
       }
     )
   }
