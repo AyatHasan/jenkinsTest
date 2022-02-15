@@ -12,7 +12,8 @@ stage("Parallel") {
       "Tasktwo" : {
         // Do some other stuff in parallel
         
-                echo  1+3 
+    def x =  3 
+    echo x 
 
       }
     )
