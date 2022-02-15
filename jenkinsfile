@@ -13,7 +13,7 @@ stage("Parallel") {
         // Do some other stuff in parallel
         
     def x =  3 
-    echo x 
+    echo ${x}
 
       }
     )
