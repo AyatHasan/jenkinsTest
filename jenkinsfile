@@ -1,35 +1,10 @@
-pipeline { 
-agent any 
-    stages { 
-        stage ('Build') { 
- steps { 
-                    echo 
-                    'Running build phase. ' 
-                }        }
-        stage ('Test') { 
- steps { 
-                    echo 
-                    'Running build phase. ' 
-                }   
-        }
-        stage ('QA') { 
- steps { 
-                    echo 
-                    'Running build phase. ' 
-                }       
-        }
-        stage ('Deploy') { 
- steps { 
-                    echo 
-                    'Running build phase. ' 
-                }
-        }
-        stage ('Monitor') { 
- steps { 
-                    echo 
-                    'Running build phase. ' 
-                }
-        }
- 
-    }           
- }
+pipeline {
+  agent any
+  stages {
+    stage('Stage 1') {
+      steps {
+        echo 'Hello world!'
+      }
+    }
+  }
+}
