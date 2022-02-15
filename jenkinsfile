@@ -1,8 +1,18 @@
 pipeline 
 {
-  node { // node/agent
-  stage('Stage 1') {
+  agent {
+       node 
+       { label 'labelName' 
+  stages {
+ stage('Stage 1') {
+     steps 
+     {
     echo 'Hello World' // echo Hello World
+
+     }
   }
+  }
+ 
+}
 }
 }
