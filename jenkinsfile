@@ -1,25 +1,12 @@
-        def x =  3 
+pipeline {
+    agent any
 
-pipeline 
-{
-  agent any 
- stages {
-stage("Parallel") {
-  steps {
-    parallel (
-      "Taskone" : {
-        //do some stuff
-        echo 'task#1'
-      },
-      "Tasktwo" : {
-        // Do some other stuff in parallel
-        
-    echo "${x}"
-
-      }
-    )
-  }
-}
-}
-
+    stages {
+        stage('Build') {
+            steps {
+                bat 'make' 
+                archiveArtifacts artifacts: '**/target/*.jar', fingerprint: true 
+            }
+        }
+    }
 }
