@@ -25,7 +25,7 @@ pipeline {
             steps {
                 echo "Test stage."
                 echo "$env.SAMPLE_GLOBAL_ENV_VAR"
-                echo "$y"
+                echo "$x"
 
             }
         }
