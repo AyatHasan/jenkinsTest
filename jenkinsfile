@@ -5,11 +5,11 @@ pipeline {
     }
     stages {
         stage("Test") {
-            when {
-                environment(name: "ENV", value: "testing")
-            }
+        
             steps {
                 echo "Test stage."
+                disableConcurrentBuilds()
+
             }
         }
     }
