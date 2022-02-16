@@ -2,22 +2,31 @@ pipeline {
     agent any
     environment {
         SAMPLE_GLOBAL_ENV_VAR = "Test global ENV variables."
+        x = "my first var"
     }
     stages {
         stage("Build") {
             environment {
                 SAMPLE_STAGE_ENV_VAR = "Test stage ENV variables."
+                        y = "my sec var"
+
             }
             steps {
                 echo "Build stage."
                 echo "$SAMPLE_GLOBAL_ENV_VAR"
                 echo "$SAMPLE_STAGE_ENV_VAR"
+                echo "$x"
+                echo "$y"
+
+                
             }
         }
         stage("Test") {
             steps {
                 echo "Test stage."
                 echo "$env.SAMPLE_GLOBAL_ENV_VAR"
+                echo "$y"
+
             }
         }
         stage("Release") {
