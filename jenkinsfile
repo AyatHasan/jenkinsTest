@@ -4,9 +4,11 @@ pipeline {
     stages {
         stage("Test") {        
             steps {
+               script {
  def jobName = "${env.JOB_NAME}"
 def environment = jobName.split("-")[1]         
 echo"${environment}"
+            }
             }
         }
     }
