@@ -1,14 +1,11 @@
- def jobName = "${env.JOB_NAME}"
-          def environment = jobName.split("-")[1]
+
 pipeline {
     agent any
     stages {
-        stage("Test") {
-        
+        stage("Test") {        
             steps {
-
-  
-          
+ def jobName = "${env.JOB_NAME}"
+def environment = jobName.split("-")[1]         
 echo"${environment}"
             }
         }
