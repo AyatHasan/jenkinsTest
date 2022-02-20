@@ -6,8 +6,7 @@ pipeline {
             steps {
                script {
  def jobName = "${env.JOB_NAME}"
-def environment = jobName.split("-")[1]         
-
+dump(${jobName})
 
             }
             }
