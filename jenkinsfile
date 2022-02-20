@@ -11,8 +11,7 @@ pipeline {
     def jobName = "${env.JOB_NAME}"
           def environment = jobName.split("-")[1]
           
-          echo ${environment}
-
+echo"${environment}"
             }
         }
     }
