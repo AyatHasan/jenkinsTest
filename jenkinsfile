@@ -6,7 +6,7 @@ pipeline {
             steps {
                script {
  def jobName = "${env.JOB_NAME}"
-echo "${jobName}"
+sh 'echo "${jobName}"'
 
             }
             }
